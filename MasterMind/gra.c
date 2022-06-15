@@ -142,17 +142,19 @@ int GRA() {
 	}
 
 	//obsłużenie przypadku, w którym gracz nie zdołał odgadnąć kodu w założonej liczbie prób
-	w("\n               Liczba możliwych prób została przekroczona. Czy chcesz spróbować ponownie? (ENTER/ESC)");
-	switch (_getch()) {
-	case '\r':
-		system("cls");
-		lprob = 0;
-		return 1;
-		break;
-	case 27:
-		SHIFT(0, 9, 0, 1);
-		return 0;
-		break;
+	w("\n          Liczba możliwych prób została przekroczona. Czy chcesz spróbować ponownie? (ENTER/ESC)");
+	while (1) {
+		switch (_getch()) {
+		case '\r':
+			system("cls");
+			lprob = 0;
+			return 1;
+			break;
+		case 27:
+			SHIFT(0, 9, 0, 1);
+			return 0;
+			break;
+		}
 	}
 }
 
